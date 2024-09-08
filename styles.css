@@ -1,0 +1,235 @@
+/* Styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5dc; /* Beige clair */
+  color: #333333; /* Gris foncé */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url("images/hero-background.png");
+  background-size: cover;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #4caf50; /* Vert forêt */
+}
+
+.hero p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.hero button {
+  padding: 15px 30px;
+  background-color: #a8d5ba;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+/* Adaptation pour les écrans plus petits */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px; /* Réduit la taille du titre sur les petits écrans */
+  }
+
+  .hero p {
+    font-size: 18px; /* Réduit la taille du texte descriptif */
+  }
+
+  .hero button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
+/* Section Nos Services */
+.services {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgb(240, 240, 240);
+}
+
+.services h2 {
+  font-size: 36px;
+  color: #4caf50;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.service {
+  width: 30%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.service img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.service h3 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #333333;
+}
+
+.service p {
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Section Nos Habitats */
+.habitats {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.habitats h2 {
+  font-size: 36px;
+  color: #4caf50;
+}
+
+.habitat-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.habitat {
+  width: 30%; /* Garde chaque bloc d'habitat à 30% de la largeur du conteneur */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour chaque bloc */
+}
+
+.habitat img {
+  width: 150px; /* Assure que l'image prend toute la largeur du bloc */
+  height: 200px; /* Fixe la hauteur de l'image pour la rendre uniforme */
+  object-fit: cover; /* Coupe l'image pour qu'elle rentre sans distorsion */
+  border-radius: 8px;
+}
+
+.habitat h3 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #333333;
+}
+
+.habitat p {
+  font-size: 16px;
+  color: #666666;
+}
+/*en mode responsive pourles petits ecrans*/
+/*.habitat-container, .service-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;} /* Pour s'assurer que les items passent à la ligne si nécessaire */
+
+/*.habitat, .service {
+  width: 30%;
+  margin-bottom: 20px;
+}*/
+
+/* Adaptation pour les écrans plus petits */
+/*@media (max-width: 768px) {
+  .habitat, .service {
+      width: 100%; /* Chaque habitat ou service prend toute la largeur sur mobile */
+/*margin-bottom: 20px;
+  }
+}*/
+
+/*section avis des visiteurs*/
+.avis {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.avis h2 {
+  font-size: 36px;
+  color: #4caf50; /*vert forét*/
+  margin-bottom: 30px;
+}
+
+.avis-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /*Permet aux éléments de passer à la ligne lorsqu’ils ne tiennent plus sur une seule ligne.*/
+}
+.avis-item {
+  width: 30%;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.avis-text {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+.avis-author {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+}
+/* Version mobile */
+@media (max-width: 768px) {
+  .avis-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

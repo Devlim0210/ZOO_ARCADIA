@@ -1,0 +1,12 @@
+# Ignorer les fichiers temporaires de l'éditeur
+.vscode/
+
+# Ignorer les fichiers systèmes (Mac, Windows)
+.DS_Store
+Thumbs.db
+
+# Ignorer les dépendances de node.js
+node_modules/
+
+# Ignorer les fichiers de build
+dist/
