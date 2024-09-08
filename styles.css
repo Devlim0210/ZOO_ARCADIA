@@ -292,3 +292,29 @@ footer {
 .services-page .service-button .btn:hover {
   background-color: #45a049;
 }
+/*backgroundservice**/
+/* Restauration ;guide ;train*/
+.service-restauration {
+  background-image: url("images/restaurant\ 2.png");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+.service-guide {
+  background-image: url("images/tour-guide-6816049_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+.service-train {
+  background-image: url("images/petit\ train.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
