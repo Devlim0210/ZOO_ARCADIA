@@ -12,6 +12,7 @@ body {
 }
 
 /* Header */
+/*Valable sur tout les pages*/
 header {
   display: flex;
   justify-content: space-between;
@@ -31,26 +32,26 @@ nav ul li a {
   color: #333333;
   font-weight: bold;
 }
-
+/***PAGE D4ACCUEIL**/
 /* Hero Section */
-.hero {
+.homepage .hero {
   text-align: center;
   padding: 100px 20px;
   background-image: url("images/hero-background.png");
   background-size: cover;
 }
 
-.hero h1 {
+.homepage .hero h1 {
   font-size: 48px;
   color: #4caf50; /* Vert forêt */
 }
 
-.hero p {
+.homepage .hero p {
   font-size: 24px;
   margin: 20px 0;
 }
 
-.hero button {
+.homepage .hero button {
   padding: 15px 30px;
   background-color: #a8d5ba;
   color: white;
@@ -60,39 +61,39 @@ nav ul li a {
 }
 /* Adaptation pour les écrans plus petits */
 @media (max-width: 768px) {
-  .hero h1 {
+  .homepage .hero h1 {
     font-size: 32px; /* Réduit la taille du titre sur les petits écrans */
   }
 
-  .hero p {
+  .homepage .hero p {
     font-size: 18px; /* Réduit la taille du texte descriptif */
   }
 
-  .hero button {
+  .homepage .hero button {
     font-size: 16px;
     padding: 12px 24px;
   }
 }
 
 /* Section Nos Services */
-.services {
+.homepage .services {
   padding: 50px 20px;
   text-align: center;
   background-color: rgb(240, 240, 240);
 }
 
-.services h2 {
+.homepage .services h2 {
   font-size: 36px;
   color: #4caf50;
 }
 
-.service-container {
+.homepage .service-container {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
 }
 
-.service {
+.homepage .service {
   width: 30%;
   text-align: center;
   padding: 20px;
@@ -100,43 +101,43 @@ nav ul li a {
   background-color: #ffffff;
 }
 
-.service img {
+.homepage .service img {
   width: 150px;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.service h3 {
+.homepage .service h3 {
   font-size: 24px;
   margin-top: 10px;
   color: #333333;
 }
 
-.service p {
+.homepage .service p {
   font-size: 16px;
   color: #666666;
 }
 
 /* Section Nos Habitats */
-.habitats {
+.homepage .habitats {
   padding: 50px 20px;
   text-align: center;
   background-color: #f0f0f0;
 }
 
-.habitats h2 {
+.homepage .habitats h2 {
   font-size: 36px;
   color: #4caf50;
 }
 
-.habitat-container {
+.homepage .habitat-container {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
 }
 
-.habitat {
+.homepage .habitat {
   width: 30%; /* Garde chaque bloc d'habitat à 30% de la largeur du conteneur */
   text-align: center;
   padding: 20px;
@@ -146,20 +147,20 @@ nav ul li a {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour chaque bloc */
 }
 
-.habitat img {
+.homepage .habitat img {
   width: 150px; /* Assure que l'image prend toute la largeur du bloc */
   height: 200px; /* Fixe la hauteur de l'image pour la rendre uniforme */
   object-fit: cover; /* Coupe l'image pour qu'elle rentre sans distorsion */
   border-radius: 8px;
 }
 
-.habitat h3 {
+.homepage .habitat h3 {
   font-size: 24px;
   margin-top: 10px;
   color: #333333;
 }
 
-.habitat p {
+.homepage .habitat p {
   font-size: 16px;
   color: #666666;
 }
@@ -183,23 +184,23 @@ nav ul li a {
 }*/
 
 /*section avis des visiteurs*/
-.avis {
+.homepage .avis {
   padding: 50px 20px;
   text-align: center;
 }
 
-.avis h2 {
+.homepage .avis h2 {
   font-size: 36px;
   color: #4caf50; /*vert forét*/
   margin-bottom: 30px;
 }
 
-.avis-container {
+.homepage .avis-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap; /*Permet aux éléments de passer à la ligne lorsqu’ils ne tiennent plus sur une seule ligne.*/
 }
-.avis-item {
+.homepage .avis-item {
   width: 30%;
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -208,19 +209,19 @@ nav ul li a {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.avis-text {
+.homepage .avis-text {
   font-size: 16px;
   color: #666666;
   margin-bottom: 15px;
 }
-.avis-author {
+.homepage .avis-author {
   font-weight: bold;
   color: #333333;
   margin-bottom: 15px;
 }
 /* Version mobile */
 @media (max-width: 768px) {
-  .avis-item {
+  .homepage .avis-item {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -232,4 +233,62 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+/****PAGES DE SERVICES***/
+
+.services-page .services {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.services-page .services h1 {
+  font-size: 36px;
+  color: #4caf50;
+  margin-bottom: 30px;
+}
+
+.services-page .service {
+  display: flex;
+  align-items: center;
+  background-img: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-page .service img {
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.services-page .service h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.services-page .service p {
+  font-size: 16px;
+  color: #666;
+}
+
+.services-page .service-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.services-page .service-button .btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.services-page .service-button .btn:hover {
+  background-color: #45a049;
 }
