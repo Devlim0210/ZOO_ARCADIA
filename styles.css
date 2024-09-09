@@ -303,6 +303,7 @@ footer {
   padding: 20px;
   border-radius: 10px;
   position: relative;
+  min-height: 150px;
 }
 .service-guide {
   background-image: url("images/tour-guide-6816049_1280.jpg");
@@ -311,6 +312,7 @@ footer {
   padding: 20px;
   border-radius: 10px;
   position: relative;
+  min-height: 150px;
 }
 .service-train {
   background-image: url("images/petit\ train.jpg");
@@ -319,6 +321,7 @@ footer {
   padding: 20px;
   border-radius: 10px;
   position: relative;
+  min-height: 150px;
 }
 /* Styles pour écrans plus petits */
 @media (max-width: 768px) {
@@ -352,4 +355,190 @@ footer {
     padding: 12px;
     font-size: 16px;
   }
+}
+
+/**PAGEDESHABITATS**/
+.habitats-page .habitats {
+  padding: 50px 20px;
+  text-align: center;
+}
+.habitats-page .habitats h1 {
+  font-size: 36px;
+  color: #4caf50;
+}
+.habitats-page .habitat-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.habitats-page .habitat {
+  width: 30%;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.habitats-page .habitat img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/*SECTIONDESANIMAUX*/
+.habitats-page #animals-section h2 {
+  font-size: 36px;
+  color: #4caf50;
+  text-align: center;
+}
+.habitats-page #animals-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.habitats-page .animal-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.habitats-page .animal {
+  width: 30%;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.habitats-page .animal img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+/* Bouton "Découvrir nos animaux" */
+.habitats-page #discover-animals {
+  padding: 15px 30px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.habitats-page #discover-animals:hover {
+  background-color: #45a049;
+}
+
+/* Footer */
+.habitats-page footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/**PAGEDECONTACT**/
+.contact-page {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/**FORMULAIREDECONTACT**/
+.contact-page .contact-form {
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-page .contact-form h1 {
+  font-size: 36px;
+  color: #333;
+}
+.contact-page .form-group {
+  margin-bottom: 20px;
+}
+.contact-page .form-group input,
+.contact-page .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #fffff7;
+}
+.contact-page button {
+  padding: 15px 30px;
+  background-color: #a8d5ba;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.contact-page button:hover {
+  background-color: #4caf50;
+}
+/* Informations de contact */
+.contact-page .contact-info {
+  background-color: #f0f0e0;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 15px;
+  text-align: left;
+  width: 80%;
+}
+/**PAGEDESAVIS***/
+.avis-page {
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #4caf50; /* Vert forêt */
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.rating {
+  font-size: 24px;
+  color: #ffd700; /* Or pour les étoiles */
+  margin-bottom: 20px;
 }
