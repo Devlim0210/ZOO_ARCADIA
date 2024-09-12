@@ -13,7 +13,7 @@ body {
 
 /* Header */
 /*Valable sur tout les pages*/
-header {
+/**header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,6 +31,53 @@ nav ul li a {
   text-decoration: none;
   color: #333333;
   font-weight: bold;
+}**/
+/* Style du header */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #4caf50; /* Vert au survol */
+}
+
+/* Style du bouton Login */
+.btn-login {
+  background-color: #4caf50; /* Couleur verte */
+  padding: 8px 16px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #388e3c; /* Couleur verte foncée au survol */
 }
 /***PAGE D4ACCUEIL**/
 /* Hero Section */
@@ -541,4 +588,57 @@ button:hover {
   font-size: 24px;
   color: #ffd700; /* Or pour les étoiles */
   margin-bottom: 20px;
+}
+/**login.php
+/* Style de base pour la page de connexion */
+.login-container {
+  max-width: 400px; /* Limite la largeur du conteneur de connexion */
+  margin: 50px auto; /* Centre la page verticalement et horizontalement */
+  padding: 20px;
+  background-color: #f0f0f0; /* Arrière-plan gris clair */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #4caf50; /* Vert forêt */
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50; /* Vert forêt */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-container button:hover {
+  background-color: #388e3c; /* Vert un peu plus foncé au survol */
+}
+
+.login-container p {
+  color: red; /* Message d'erreur en rouge */
+  font-size: 14px;
 }
