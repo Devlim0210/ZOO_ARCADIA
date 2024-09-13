@@ -428,8 +428,9 @@ footer {
 }
 .habitats-page .habitat img {
   width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 /*SECTIONDESANIMAUX*/
@@ -641,4 +642,70 @@ button:hover {
 .login-container p {
   color: red; /* Message d'erreur en rouge */
   font-size: 14px;
+}
+
+/**ADMIN.PHP**/
+/* Styles pour la page admin */
+.admin-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la page */
+.admin-container h1 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Table pour afficher les avis */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #4caf50;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+table td {
+  background-color: #fff;
+  color: #333;
+}
+
+table td a {
+  color: red;
+  text-decoration: none;
+}
+
+/* Styles pour les actions */
+table td a:hover {
+  text-decoration: underline;
+  color: darkred;
+}
+
+/*  responsive */
+@media (max-width: 768px) {
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
