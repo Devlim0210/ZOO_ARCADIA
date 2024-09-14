@@ -14,27 +14,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM users WHERE username = :username";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch();
 
 
-    // Test pour voir si l'utilisateur est trouvé
-    //var_dump($user);
-    // Si l'utilisateur est trouvé ou l'employé, vérification le mot de passe
     if ($user && password_verify($password, $user['password'])) {
-         // Si l'utilisateur est un employé
-         if ($user['role'] === 'employe') {
-            $_SESSION['employe'] = true; // Créer la session employé
-            header('Location: employe/employe.php');
-            exit();
+        // Afficher le rôle de l'utilisateur
+    echo "Le rôle de l'utilisateur est : " . $user['role'];
+        // Connexion réussie : enregistrement des infos dans la session
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_type'] = $user['role'];
+
+        // Redirection selon le rôle de l'utilisateur
+        if ($user['role'] == 'admin') {
+            header("Location: admin.php");
+        } elseif ($user['role'] == 'employe') {
+            header("Location: /employe/employe.php");
+        } elseif ($user['role'] == 'veterinaire') {
+            header("Location: veterinaire.php");
         } else {
-            
-            $_SESSION['admin'] = true;// Création d'une session pour l'utilisateur
-            header('Location: admin.php'); // Redirection vers la page d'administration
-            exit();}
-       } else {
-        // En cas d'erreur, redirection avec un message d'erreur
-        header('Location: login.php?error=Nom d\'utilisateur ou mot de passe incorrect');
+            echo "Rôle inconnu.";
+        }
         exit();
+    } else {
+        // Mauvais mot de passe ou utilisateur inexistant
+        echo "Nom d'utilisateur ou mot de passe incorrect.";
     }
 }
 ?>

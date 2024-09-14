@@ -6,6 +6,7 @@
     <title>Contact - Zoo Arcadia</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <!--Pour eviter le conflit de style ds css utilisons wrapper-->
     <div class="contact-page">
@@ -15,7 +16,8 @@
       <!-- Formulaire de contact -->
       <section class="contact-form">
         <h1>Contactez-nous</h1>
-        <form id="contact-form" action="contact.php" method="POST">
+        <!--permet au formulaire de soumettre les données à "submit_contact.php "qui traitera les informations.-->
+        <form id="contact-form" action="submit_contact.php" method="POST">
           <div class="form-group">
             <label for="name">Pseudo :</label>
             <input

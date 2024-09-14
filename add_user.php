@@ -5,7 +5,7 @@ require 'db_connection.php'; //
 // Données de l'utilisateur
 $username = 'utilisateur@zooarcadia.com'; // Email de l'utilisateur
 $password = 'zoo_arcadia2K24'; // Mot de passe 
-$role = 'user'; // Rôle de l'utilisateur
+$role = 'admin'; // Rôle de l'utilisateur
 
 // Hacher le mot de passe 
 //sécurité/contre les attaques/conformité

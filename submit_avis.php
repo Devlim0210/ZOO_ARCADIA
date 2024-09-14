@@ -7,14 +7,14 @@ error_reporting(E_ALL);
 
 require 'db_connection.php'; // Connexion à la base de données
 
-// Afficher les données du formulaire pour déboguer
-var_dump($_POST);
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
     $nom = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['comment']);
+    $message = htmlspecialchars($_POST['message']);
+    var_dump($name, $email, $message);
 
     // Vérifier que tous les champs sont remplis
     if (!empty($nom) && !empty($email) && !empty($message)) {

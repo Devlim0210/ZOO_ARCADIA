@@ -1,8 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin'])) {
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'admin') {
     header("Location: login.php");
     exit();
+} else {
+    echo "Utilisateur admin connecté.";
 }
 
 include 'get_avis.php'; // Inclusion du fichier qui récupère les avis
@@ -62,15 +64,55 @@ include 'get_avis.php'; // Inclusion du fichier qui récupère les avis
 
     <!-- Gestion des services -->
     <h2>Gestion des services</h2>
-    <p>Fonctionnalités à implémenter pour la gestion des services.</p>
+    <h2>Ajouter un service</h2>
+<form method="POST" action="ajouter_service.php">
+    <label for="nom">Nom du service :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="description">Description du service :</label>
+    <textarea id="description" name="description" required></textarea>
+
+    <button type="submit">Ajouter le service</button>
+</form>
 
     <!-- Gestion des habitats -->
-    <h2>Gestion des habitats</h2>
-    <p>Fonctionnalités à implémenter pour la gestion des habitats.</p>
+   
+    <h2>Ajouter un habitat</h2>
+<form method="POST" action="ajouter_habitat.php" enctype="multipart/form-data">
+    <label for="nom">Nom de l'habitat :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="description">Description de l'habitat :</label>
+    <textarea id="description" name="description" required></textarea>
+
+    <label for="image">Image de l'habitat :</label>
+    <input type="file" id="image" name="image">
+
+    <button type="submit">Ajouter l'habitat</button>
+</form>
 
     <!-- Bouton pour accéder à la gestion des employés -->
     <h2>Gestion des employés</h2>
-    <a href="employe/employe.php" class="btn">Accéder à la gestion des employés</a>
+    
+   <!-- utilisation de javascript pour rediriger pour que le bouton a le meme style que les autres-->
+     <button onclick="window.location.href='employe/employe.php'">Accéder à la gestion des employés</button>
+    <!-- Formulaire pour ajouter un employé ou vétérinaire -->
+<h2>Ajouter un employé ou vétérinaire</h2>
+<form method="POST" action="ajouter_employe.php">
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="role">Rôle :</label>
+    <select id="role" name="role" required>
+        <option value="employe">Employé</option>
+        <option value="veterinaire">Vétérinaire</option>
+    </select>
+
+    <button type="submit">Ajouter l'employé</button>
+</form>
 
 </div>
 
