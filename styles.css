@@ -115,20 +115,6 @@ body {
 }
 
 /* Adaptation pour les écrans plus petits */
-@media (max-width: 768px) {
-  .homepage .hero h1 {
-    font-size: 32px; /* Réduit la taille du titre sur les petits écrans */
-  }
-
-  .homepage .hero p {
-    font-size: 18px; /* Réduit la taille du texte descriptif */
-  }
-
-  .homepage .hero button {
-    font-size: 16px;
-    padding: 12px 24px;
-  }
-}
 
 /* Section Nos Services */
 .homepage .services {
@@ -361,39 +347,6 @@ footer {
   position: relative;
   min-height: 150px;
 }
-/* Styles pour écrans plus petits */
-@media (max-width: 768px) {
-  /* Ajuster la disposition des services pour qu'ils soient empilés verticalement */
-  .services-page .service {
-    display: block; /* Change le display en bloc */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  /* Assure que l'image occupe 100% de la largeur du conteneur en mode mobile */
-  .services-page .service img {
-    width: 100%;
-    max-width: 30px;
-    height: auto; /* Ajuste automatiquement la hauteur */
-    margin-bottom: 10px;
-  }
-
-  /* Augmente la taille du texte pour les petits écrans */
-  .services-page .service h2 {
-    font-size: 20px;
-  }
-
-  .services-page .service p {
-    font-size: 14px;
-  }
-
-  /* Le bouton prend toute la largeur en mobile */
-  .services-page .service-button .btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-  }
-}
 
 /**PAGEDESHABITATS**/
 .habitats-page .habitats {
@@ -482,8 +435,6 @@ footer {
 
 /**PAGEDECONTACT**/
 .contact-page {
-  width: 80%;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -494,6 +445,8 @@ footer {
 }
 #contact-form {
   background-color: #ffffff;
+  max-width: 600px;
+  margin: 50px auto;
 }
 .contact-page .contact-form h1 {
   font-size: 36px;
@@ -502,7 +455,7 @@ footer {
   padding-bottom: 30px;
 }
 .contact-page .form-group {
-  margin-bottom: 20px;
+  padding: 10px;
 }
 .contact-page .form-group input,
 .contact-page .form-group textarea {
@@ -699,6 +652,99 @@ table td a:hover {
   .nav-links li {
     font-size: 0.8rem;
   }
+  /**index.php**/
+
+  .habitat-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .habitat-container .habitat {
+    width: 100%; /* Images occupent toute la largeur */
+    height: auto; /* Conserver les proportions des images */
+  }
+  .homepage .habitat h3 {
+    font-size: 1.2rem;
+  }
+  .homepage .habitat p {
+    font-size: 0.8rem;
+  }
+  .service-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .service-container .service {
+    width: 100%; /* Images occupent toute la largeur */
+    height: auto; /* Conserver les proportions des images */
+  }
+  .homepage .service h3 {
+    font-size: 1.2rem;
+  }
+  .homepage .service p {
+    font-size: 0.8rem;
+  }
+  .homepage.avis-text {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .homepage .hero h1 {
+    font-size: 32px; /* Réduit la taille du titre sur les petits écrans */
+  }
+
+  .homepage .hero p {
+    font-size: 18px; /* Réduit la taille du texte descriptif */
+  }
+
+  .homepage .hero button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+/* adaptation pour la page services pour les petits écrans */
+/* Styles pour écrans plus petits */
+@media (max-width: 768px) {
+  /* Ajuster la disposition des services pour qu'ils soient empilés verticalement */
+  .services-page .service {
+    display: block; /* Change le display en bloc */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Assure que l'image occupe 100% de la largeur du conteneur en mode mobile */
+  .services-page .service img {
+    width: 100%;
+    max-width: 30px;
+    height: auto; /* Ajuste automatiquement la hauteur */
+    margin-bottom: 10px;
+  }
+
+  .services-page .services h1 {
+    font-size: 1.5rem;
+  }
+  .services-page .service h2 {
+    font-size: 1.2rem;
+  }
+
+  .services-page .service p {
+    font-size: 0.6rem;
+  }
+
+  /* Le bouton prend toute la largeur en mobile */
+  .services-page .service-button .btn {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
 }
 
-/**index.php**/
+/*****adaptation page habitats***/
+@media (max-width: 590px) {
+  .habitats-page .habitats h1 {
+    font-size: 1.5rem;
+  }
+  .habitats-page .habitat-container .habitat p {
+    font-size: O.6rem !important;
+  }
+}
