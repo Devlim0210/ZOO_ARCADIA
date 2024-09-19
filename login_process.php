@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Afficher les données récupérées pour déboguer
 var_dump($user);
 
-    if ($user && md5($password) === $user['password']) {
+if ($user && password_verify($password, $user['password'])) {
         // Afficher le rôle de l'utilisateur
     echo "Le rôle de l'utilisateur est : " . $user['role'];
         // Connexion réussie : enregistrement des infos dans la session
@@ -34,11 +34,11 @@ var_dump($user);
 
         // Redirection selon le rôle de l'utilisateur
         if ($user['role'] == 'admin') {
-            header("Location: admin.php");
-        } elseif ($user['role'] == 'employe') {
-            header("Location: /employe/employe.php");
-        } elseif ($user['role'] == 'veterinaire') {
-            header("Location: veterinaire.php");
+            header("Location: /zoo_arcadia/admin.php");
+        } elseif ($user['role'] == 'employé') {
+            header("Location: /zoo_arcadia/employe/employe.php");
+        } elseif ($user['role'] == 'vétérinaire') {
+            header("Location: /zoo_arcadia/veterinaire/veterinaire.php");
         } else {
             echo "Rôle inconnu.";
         }

@@ -1,13 +1,16 @@
 
 <?php
-//tableau de bord principal pour les employés avec les liens vers differents actions
+// Démarrer la session
 session_start();
-if (!isset($_SESSION['employe'])) {
+
+// Vérifier si l'utilisateur est connecté et s'il a le rôle 'employé'
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'employé') {
     header('Location: ../login.php');
     exit();
 }
 
-require '../get_avis.php'; // Inclut le fichier pour récupérer les avis
+// Si l'utilisateur est un employé, continuer à afficher la page
+require'../get_avis.php'; // Inclut le fichier pour récupérer les avis
 
 ?>
 
@@ -67,6 +70,40 @@ require '../get_avis.php'; // Inclut le fichier pour récupérer les avis
     <div class="actions">
         <a href="ajouter_nourriture.php" class="btn">Ajouter de la nourriture</a>
     </div>
+     <!-- Affichage de la consommation de nourriture -->
+     <h2>Consommation de nourriture des animaux</h2>
+    <?php
+    // Récupérer les informations de nourriture pour les animaux
+    $sql = "SELECT n.*, a.prenom AS animal_prenom FROM nourriture n JOIN animaux a ON n.animal_id = a.id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $nourriture_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
+    <?php if (!empty($nourriture_data)): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Animal</th>
+                    <th>Nourriture</th>
+                    <th>Quantité</th>
+                    <th>Date et Heure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($nourriture_data as $nourriture): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($nourriture['animal_prenom']); ?></td>
+                        <td><?= htmlspecialchars($nourriture['type_nourriture']); ?></td>
+                        <td><?= htmlspecialchars($nourriture['quantite']); ?></td>
+                        <td><?= htmlspecialchars($nourriture['date_heure']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Aucune donnée de nourriture enregistrée pour le moment.</p>
+    <?php endif; ?>
 </div>
 
 <?php include '../footer.php'; ?>

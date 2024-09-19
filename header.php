@@ -10,7 +10,12 @@
                 <li><a href="habitats.php">Habitats</a></li>
                 <li><a href="avis.php">Avis</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="login.php" class="btn-login">Login</a></li> <!-- Bouton Login -->
+                <!-- Affichage du bouton Login ou Déconnexion selon l'état de la session -->
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <li><a href="../logout.php" class="btn">Déconnexion</a></li>
+        <?php else: ?>
+            <li><a href="login.php" class="btn">Login</a></li>
+        <?php endif; ?>
             </ul>
         </nav>
     </div>
