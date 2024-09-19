@@ -154,6 +154,7 @@ Une fois le projet déployé, configure la base de données MySQL (ou autre) et 
 Pour assurer la sécurité de l'application, plusieurs bonnes pratiques ont été mises en place :
 
 - **Utilisation de PDO** : La connexion à la base de données MySQL est réalisée via PDO, ce qui permet de prévenir les attaques par injection SQL grâce à l'utilisation de requêtes préparées.
+- **Gestion des erreurs** : La gestion des erreurs PDO est activée avec `ERRMODE_EXCEPTION`, ce qui permet d'attraper et de gérer les erreurs de manière appropriée sans exposer d'informations sensibles à l'utilisateur final.
 
 ### 8. **Contributeurs**
 

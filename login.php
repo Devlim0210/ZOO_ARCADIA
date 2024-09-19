@@ -13,8 +13,8 @@
     <div  class="login-container">
         <h1>Connexion</h1>
         <form action="login_process.php" method="POST">
-            <label for="username">Nom d'utilisateur(email)</label>
-            <input type="text" id="username" name="username" placeholder="Entrez votre email" required>
+            <label for="email">Nom d'utilisateur(email)</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
             <button type="submit">Se Connecter</button>

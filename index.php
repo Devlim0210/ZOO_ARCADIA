@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zoo Arcadia - Page d'accueil</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
   </head>
   <body>
     <div class="homepage">
