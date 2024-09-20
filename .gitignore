@@ -9,4 +9,4 @@ Thumbs.db
 node_modules/
 
 # Ignorer les fichiers de build
-dist/
+dist//vendor/
