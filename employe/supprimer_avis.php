@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['employe'])) {
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'employé') {
     header("Location: ../login.php");
     exit();
 }

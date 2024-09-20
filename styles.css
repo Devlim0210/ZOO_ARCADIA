@@ -8,6 +8,9 @@
   src: url(./fonts/Poppins-Light.ttf);
 }
 @import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
+input[type="text"] {
+  display: block !important;
+}
 
 * {
   margin: 0;
@@ -18,13 +21,13 @@
 }
 
 button {
-  padding: 10px 20px;
+  padding: 5px 5px;
   background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 13px;
   transition: 0.4s ease;
 }
 
