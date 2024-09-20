@@ -1,1 +1,1 @@
-web: heroku-php-apache2 zoo_arcadia/
+web: heroku-php-apache2 
