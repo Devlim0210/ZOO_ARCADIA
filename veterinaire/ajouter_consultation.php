@@ -16,7 +16,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $animaux = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Débogage : afficher les animaux récupérés
-var_dump($animaux);
+//var_dump($animaux);
 
 // Si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
