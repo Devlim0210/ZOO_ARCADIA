@@ -34,11 +34,11 @@ if ($user && password_verify($password, $user['password'])) {
 
         // Redirection selon le rôle de l'utilisateur
         if ($user['role'] == 'admin') {
-            header("Location: /zoo_arcadia/admin.php");
+            header("Location: admin.php");
         } elseif ($user['role'] == 'employé') {
-            header("Location: /zoo_arcadia/employe/employe.php");
+            header("Location: employe/employe.php");
         } elseif ($user['role'] == 'vétérinaire') {
-            header("Location: /zoo_arcadia/veterinaire/veterinaire.php");
+            header("Location: veterinaire/veterinaire.php");
         } else {
             echo "Rôle inconnu.";
         }
