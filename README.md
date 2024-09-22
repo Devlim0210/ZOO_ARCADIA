@@ -6,11 +6,14 @@ Zoo Arcadia est un site web interactif et écoresponsable conçu pour offrir aux
 
 ### 2. Fonctionnalités
 
-- Découverte des habitats animaliers
-- Formulaire de contact pour les visiteurs
-- Soumission et gestion des avis des visiteurs
-- Section de connexion pour l'administration et les employés
-- Interface pour les employés pour valider ou supprimer des avis
+    •	Page d’accueil : Présente les services du zoo et permet aux visiteurs de découvrir les habitats et les animaux.
+    •	Formulaire de contact : Les visiteurs peuvent nous contacter directement via un formulaire .
+    •	Gestion des services : Les employés peuvent ajouter, modifier ou supprimer des services.
+    •	Gestion des habitats : Les employés peuvent ajouter des habitats avec une description et une image associée.
+    •	Gestion des avis : Les administrateurs peuvent valider ou supprimer les avis des visiteurs.
+    •	Section vétérinaire : Gestion des soins et de la nourriture des animaux par les employés.
+    •	Système de connexion : Authentification sécurisée pour les employés et administrateurs via des rôles définis.
+    •	Système de sessions : Utilisation de sessions sécurisées pour gérer les connexions utilisateurs.
 
 ### 3.Prérequis
 
@@ -19,7 +22,9 @@ Zoo Arcadia est un site web interactif et écoresponsable conçu pour offrir aux
 - **PHP** : Version 7.4 ou plus récente
 - **Base de données relationnelle** : MySQL/MariaDB/PostgreSQL
 - **Base de données NoSQL** : MongoDB (si utilisée pour les consultations d'animaux)
-- **Autres** : Git, Node.js (si applicable)
+- **Heroku CLI** : Pour déployer et gérer le projet.
+- **composer** : Pour la gestion des dépendances PHP.
+- **Autres** : Git,
 
 ### 4. Technologies Utilisées
 
@@ -44,45 +49,11 @@ cd ZOO_ARCADIA
 
 #### b. **Installer les dépendances**
 
-Pour l’instant, aucune dépendance via Composer n’est mentionnée. Si tu ajoutes des dépendances pour MongoDB plus tard, tu pourras utiliser Composer.
+```bash
+composer install
+```
 
-#### c. **Configuration de la base de données**
-
-1. **MySQL (ou autre base relationnelle)** :
-
-   - Exécute le fichier SQL fourni (`zoo_arcadia.sql`) pour créer les tables nécessaires.
-   - Assure-toi d'avoir configuré le fichier `db_connection.php` avec les bonnes informations (hôte, nom de la base de données, identifiant, mot de passe).
-     • Exemple :
-     $host = 'localhost';
-    $dbname = 'zoo_arcadia';
-   $username = 'root';
-     $password = '';
-   - Lancer le serveur local :
-     • L’utilisateur doit utiliser un serveur local comme XAMPP, MAMP, ou WAMP pour exécuter le projet.
-     • Après avoir démarré le serveur, il peut accéder au site en ouvrant localhost/zoo_arcadia dans son navigateur.
-
-2. **MongoDB** :
-   - Installe MongoDB et démarre le service.
-   - Configure les collections pour les données non relationnelles, comme les consultations d'animaux (si applicable).
-
-#### d. **Lancer l’application en local**
-
-1. Place le projet dans le dossier accessible par ton serveur local (ex. `htdocs` pour XAMPP).
-2. Ouvre ton navigateur et accède à l’application via `localhost/zoo_arcadia`.
-
-### 4. **Utilisation de l’application**
-
-- **Accès visiteur** : Navigation entre les habitats, consultation des services, et possibilité de laisser un avis.
-- **Accès administrateur** : Gestion des animaux, habitats, services, et comptes.
-- **Accès vétérinaire et employé** : Suivi des états des animaux, gestion des avis, alimentation des animaux.
-
-#### Identifiants par défaut :
-
-- **Email** : `utilisateur@zooarcadia.com`
-- **Mot de passe** : `zoo_arcadia2K24`
-- **Rôle** : `admin`
-
-### 5. **Structure du projet**
+### 6. **Structure du projet**
 
 - **Dossier `employe/`** : Contient les scripts pour les employés.
 
@@ -107,47 +78,77 @@ Pour l’instant, aucune dépendance via Composer n’est mentionnée. Si tu ajo
   - `header.php`, `footer.php` : Templates utilisés pour maintenir la cohérence du design sur toutes les pages.
   - `styles.css`, `scripts.js` : Styles et scripts customisés.
 
-### 6. **Déploiement sur Heroku**
+### 7. Comptes Utilisateurs
 
-Les étapes suivantes détaillent comment déployer cette application sur Heroku.
+- **Compte Administrateur** :
 
-#### a. **Installer l'outil de ligne de commande Heroku**
+  - Email : `utilisateur@zooarcadia.com`
+  - Mot de passe : `zoo_arcadia2K24`
 
-Si tu ne l’as pas déjà, installe l’outil de ligne de commande Heroku :
+- **Compte Employé** :
+
+  - Email : `employe@zooarcadia.com`
+  - Mot de passe : `employe_password` (hacher le mot de passe lors de l'initialisation)
+
+- **Compte Vétérinaire** :
+  - Email : `veterinaire@zooarcadia.com`
+  - Mot de passe : `veterinaire_password` (hacher le mot de passe lors de l'initialisation)
+
+### 8. Configuration et Déploiement de l'Application
+
+### a. **Déploiement sur Heroku**
+
+1. **Création de l'application sur Heroku** :
+
+   - Crée un compte sur Heroku et installe l'interface en ligne de commande (CLI) : https://devcenter.heroku.com/articles/heroku-cli.
+   - Connecte-toi à ton compte Heroku via le terminal en utilisant `heroku login`.
+   - Crée une nouvelle application avec `heroku create [nom_de_ton_application]`.
+   - Associe ton dépôt GitHub à ton projet Heroku avec la commande : `git push heroku main`.
+
+2. **Configuration PostgreSQL** :
+
+   - Heroku propose une base de données PostgreSQL par défaut. Pour configurer cette base, tu peux exécuter la commande suivante pour accéder à PostgreSQL :
+     ```bash
+     heroku pg:psql --app [nom_de_ton_application]
+     ```
+   - Dans l'interface PostgreSQL, tu pourras exécuter les commandes SQL nécessaires pour créer tes tables.
+   - Exemple d'une commande pour créer la table des habitats :
+     ```sql
+     CREATE TABLE habitats (
+         id SERIAL PRIMARY KEY,
+         nom VARCHAR(255) NOT NULL,
+         description TEXT NOT NULL,
+         image VARCHAR(255)
+     );
+     ```
+
+3. **Déploiement continu** :
+   - En activant l'option de déploiement automatique sur Heroku, chaque fois que tu fais un `git push` sur ton dépôt GitHub, ton projet sera automatiquement déployé sur Heroku.
+   - Pour vérifier les logs et résoudre les éventuelles erreurs, utilise :
+     ```bash
+     heroku logs --tail --app [nom_de_ton_application]
+     ```
+
+### b. **Lancer l'application en local**
+
+. Base de données MySQL (local) :
+• Exécute le fichier zoo_arcadia.sql pour créer les tables nécessaires.
+• Configure db_connection.php avec les bonnes informations :
 
 ```bash
-npm install -g heroku
+$host = 'localhost';
+$dbname = 'zoo_arcadia';
+$username = 'root';
+$password = '';
 ```
 
-#### b. **Se connecter à Heroku**
+### c. **Lancer l'application**
 
-Connecte-toi à ton compte Heroku depuis la ligne de commande :
-
-```bash
-heroku login
-```
-
-#### c. **Créer une application sur Heroku**
-
-Dans le répertoire de ton projet, exécute cette commande pour créer une nouvelle application :
-
-```bash
-heroku create nom-de-ton-app
-```
-
-#### d. **Déployer l'application**
-
-Pousse ton code vers Heroku en utilisant Git :
-
-```bash
-git add .
-git commit -m "Initial commit"
-git push heroku master
-```
-
-#### e. **Configurer la base de données**
-
-Une fois le projet déployé, configure la base de données MySQL (ou autre) et MongoDB sur Heroku (cela peut être fait via l’interface de Heroku ou avec l’outil de ligne de commande).
+- Une fois que tout est déployé, tu pourras accéder à ton site via l'URL fournie par Heroku, par exemple : `https://zoo_arcadiabyftr.herokuapp.com`.
+- Navigue entre les différentes pages pour tester les fonctionnalités :
+  - La gestion des habitats, des services, des animaux.
+  - La gestion des avis des visiteurs.
+  - Les accès pour les vétérinaires et les employés.
 
 ### 7. **Sécurité**
 
