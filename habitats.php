@@ -31,7 +31,7 @@
             </p>
           </div>
           <div class="habitat">
-            <img src="images/marais.jpg" alt="Marais" />
+            <img src="images/Marais.jpg" alt="Marais" />
             <h3>Marais</h3>
             <p>
               Les marais sont le refuge des crocodiles, tortues et grenouilles.
