@@ -21,7 +21,7 @@ Zoo Arcadia est un site web interactif et écoresponsable conçu pour offrir aux
 - **Serveur local** : Xampp
 - **PHP** : Version 7.4 ou plus récente
 - **Base de données relationnelle** : MySQL/MariaDB/PostgreSQL
-- **Base de données NoSQL** : MongoDB (si utilisée pour les consultations d'animaux)
+- **Base de données NoSQL** : MongoDB
 - **Heroku CLI** : Pour déployer et gérer le projet.
 - **composer** : Pour la gestion des dépendances PHP.
 - **Autres** : Git,
@@ -74,7 +74,7 @@ composer install
   - `login.php`, `login_process.php` : Gestion de la connexion des utilisateurs.
 
 - **Autres** :
-  - `db_connection.php` : Connexion à la base de données MySQL via PDO.
+  - `db_connection.php` : Connexion à la base de données MySQL via PDO et Postgres.
   - `header.php`, `footer.php` : Templates utilisés pour maintenir la cohérence du design sur toutes les pages.
   - `styles.css`, `scripts.js` : Styles et scripts customisés.
 
@@ -88,11 +88,11 @@ composer install
 - **Compte Employé** :
 
   - Email : `employe@zooarcadia.com`
-  - Mot de passe : `employe_password` (hacher le mot de passe lors de l'initialisation)
+  - Mot de passe : `employe_password`
 
 - **Compte Vétérinaire** :
   - Email : `veterinaire@zooarcadia.com`
-  - Mot de passe : `veterinaire_password` (hacher le mot de passe lors de l'initialisation)
+  - Mot de passe : `veterinaire_password`
 
 ### 8. Configuration et Déploiement de l'Application
 
@@ -102,14 +102,14 @@ composer install
 
    - Crée un compte sur Heroku et installe l'interface en ligne de commande (CLI) : https://devcenter.heroku.com/articles/heroku-cli.
    - Connecte-toi à ton compte Heroku via le terminal en utilisant `heroku login`.
-   - Crée une nouvelle application avec `heroku create [nom_de_ton_application]`.
+   - Crée une nouvelle application avec `heroku create zoo-arcadiabyftr`.
    - Associe ton dépôt GitHub à ton projet Heroku avec la commande : `git push heroku main`.
 
 2. **Configuration PostgreSQL** :
 
    - Heroku propose une base de données PostgreSQL par défaut. Pour configurer cette base, tu peux exécuter la commande suivante pour accéder à PostgreSQL :
      ```bash
-     heroku pg:psql --app [nom_de_ton_application]
+     heroku pg:psql --app zoo-arcadiabyftr
      ```
    - Dans l'interface PostgreSQL, tu pourras exécuter les commandes SQL nécessaires pour créer tes tables.
    - Exemple d'une commande pour créer la table des habitats :
@@ -126,13 +126,13 @@ composer install
    - En activant l'option de déploiement automatique sur Heroku, chaque fois que tu fais un `git push` sur ton dépôt GitHub, ton projet sera automatiquement déployé sur Heroku.
    - Pour vérifier les logs et résoudre les éventuelles erreurs, utilise :
      ```bash
-     heroku logs --tail --app [nom_de_ton_application]
+     heroku logs --tail --app zoo-arcadiabyftr
      ```
 
 ### b. **Lancer l'application en local**
 
 . Base de données MySQL (local) :
-• Exécute le fichier zoo_arcadia.sql pour créer les tables nécessaires.
+• Exécute le fichier ZOO_ARCADIA.sql pour créer les tables nécessaires.
 • Configure db_connection.php avec les bonnes informations :
 
 ```bash
@@ -142,7 +142,7 @@ $username = 'root';
 $password = '';
 ```
 
-### c. **Lancer l'application**
+### c. **Lancer l'application en ligne**
 
 - Une fois que tout est déployé, tu pourras accéder à ton site via l'URL fournie par Heroku, par exemple : `https://zoo_arcadiabyftr.herokuapp.com`.
 - Navigue entre les différentes pages pour tester les fonctionnalités :
