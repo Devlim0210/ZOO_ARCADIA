@@ -161,9 +161,3 @@ Pour assurer la sécurité de l'application, plusieurs bonnes pratiques ont ét�
 
 - **Nom** : RATSIMAHARISON FETRA HENINTSOA
 - **Pseudo**: "Devlim0210"
-
-###### Fichier SQL manquant
-
-J'ai récemment réalisé que j'avais oublié d'inclure le fichier `.sql` nécessaire pour la base de données lors de la première soumission de mon projet. Ce fichier, `zoo_arcadia_new.sql`, a été récupéré depuis la base de données en ligne sur Heroku et est maintenant disponible dans le dossier `db/` de ce dépôt.
-
-Veuillez l'utiliser pour restaurer la base de données locale si nécessaire.
