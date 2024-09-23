@@ -1,9 +1,6 @@
 <?php
 //insertion des avis dans la base de données
-// test affichage des erreurs
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 require 'db_connection.php'; // Connexion à la base de données
 
