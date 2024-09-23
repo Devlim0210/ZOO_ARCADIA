@@ -4,7 +4,7 @@ if (getenv("DATABASE_URL")) {
     $db = parse_url(getenv("DATABASE_URL"));
     
     // Affichage pour vérifier que les informations de la base de données sont correctes
-    var_dump($db); // Vérifie la structure de la variable $db
+    
 
     try {
         $pdo = new PDO("pgsql:host={$db['host']};port={$db['port']};dbname=" . ltrim($db["path"], "/"), $db["user"], $db["pass"]);

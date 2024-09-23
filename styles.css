@@ -101,6 +101,19 @@ body {
 .btn-login:hover {
   background-color: #388e3c; /* Couleur verte foncée au survol */
 }
+.btn-disconnection {
+  background-color: red;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.nav-links a.btn-disconnection:hover {
+  background-color: rgb(147, 107, 99);
+  color: rgb(233, 35, 35);
+}
+
 /***PAGE D4ACCUEIL**/
 /* Hero Section */
 .homepage .hero {
