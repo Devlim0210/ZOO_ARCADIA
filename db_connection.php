@@ -1,23 +1,19 @@
 <?php
-// Récupération des informations de connexion à partir de la variable d'environnement DATABASE_URL
-$db = parse_url(getenv("DATABASE_URL"));
-
-try {
-    // Connexion à la base de données avec PDO pour PostgreSQL
-    $pdo = new PDO("pgsql:" . sprintf(
-        "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-        $db["host"],
-        $db["port"],
-        $db["user"],
-        $db["pass"],
-        ltrim($db["path"], "/")
-    ));
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur de connexion à la base de données : " . $e->getMessage());
+if (getenv("DATABASE_URL")) {
+    // Connexion en ligne (par exemple, avec PostgreSQL)
+    $db = parse_url(getenv("DATABASE_URL"));
+    $pdo = new PDO("pgsql:host={$db['host']};port={$db['port']};dbname=" . ltrim($db["path"], "/"), $db["user"], $db["pass"]);
+} else {
+    // Connexion locale avec MySQL
+    $db = [
+        'host' => 'localhost',
+        'port' => '3306',
+        'user' => 'root',
+        'pass' => '',  // Si tu as un mot de passe MySQL local, remplace cette valeur
+        'dbname' => 'zoo_arcadia'  // Remplace par le nom de ta base de données MySQL locale
+    ];
+    $pdo = new PDO("mysql:host={$db['host']};port={$db['port']};dbname={$db['dbname']}", $db['user'], $db['pass']);
 }
 
-if (!$pdo) {
-    die("Connexion à la base de données échouée !");
-}
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
