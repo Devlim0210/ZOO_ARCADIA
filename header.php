@@ -12,7 +12,7 @@
                 <li><a href="contact.php">Contact</a></li>
                 <!-- Affichage du bouton Login ou Déconnexion selon l'état de la session -->
         <?php if (isset($_SESSION['user_id'])): ?>
-           <li> <a href="logout.php" class="btn">Déconnexion</a><li>
+           <li> <a href="/logout.php" class="btn">Déconnexion</a><li>
         <?php else: ?>
             <li><a href="login.php" class="btn">Login</a></li>
         <?php endif; ?>
