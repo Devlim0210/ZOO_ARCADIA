@@ -1,4 +1,4 @@
-document
+/*document
   .getElementById("contact-form")
   .addEventListener("submit", function (event) {
     console.log("Formulaire soumis.");
@@ -6,7 +6,13 @@ document
     document.querySelector('button[type="submit"]').disabled = true;
 
     //  Ajoute un message pour informer l'utilisateur
-    alert("Formulaire soumis, veuillez patienter...");
+    alert("Formulaire soumis, veuillez patienter...");*/
+
+    // interception de la soumission du formulaire
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault(); //Empeche le rechargement de la page
+      alerte("Formulaire intercepté, première étaoe réussue !");
+    });
     // Récupérer les champs du formulaire
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
