@@ -30,10 +30,29 @@
       return;
     }
 
-    // Si tout est correct, le formulaire est soumis sans blocage
-    //console.log("Le formulaire est soumis.");
-alert("Tout est ok,prêt pour l'envoi avec fetch");
-  });
+   // ➤ Préparer les données à envoyer avec FormData
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("email", email);
+  formData.append("message", message);
+
+  // ➤ Envoyer les données avec fetch()
+  fetch("submit_contact.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      console.log("Réponse du serveur :", data);
+      alert(data);
+      document.getElementById("contact-form").reset();
+    })
+    .catch((error) => {
+      console.error("Erreur lors de l'envoi :", error);
+      alert("Une erreur est survenue.");
+    });
+});
+
 
 // Fonction de validation de l'email
 function validateEmail(email) {
