@@ -12,28 +12,27 @@
     document.getElementById("contact-form").addEventListener("submit", function (event) {
       event.preventDefault(); //Empeche le rechargement de la page
       alerte("Formulaire intercepté, première étaoe réussue !");
-    });
+    
     // Récupérer les champs du formulaire
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
     // Si un champ est vide, empêcher la soumission
-    if (name === "" || email === "" || message === "") {
-      event.preventDefault(); // Bloquer la soumission
-      alert("Tous les champs doivent être remplis.");
+    if (!name  || !email || !message ) {
+     alert("Tous les champs doivent être remplis.");
       return;
     }
 
-    // Valider l'adresse email
+    // Verifier l'adresse email si cest au bon format
     if (!validateEmail(email)) {
-      event.preventDefault(); // Bloquer la soumission
-      alert("Veuillez entrer une adresse email valide.");
+     alert("Veuillez entrer une adresse email valide.");
       return;
     }
 
     // Si tout est correct, le formulaire est soumis sans blocage
-    console.log("Le formulaire est soumis.");
+    //console.log("Le formulaire est soumis.");
+alert("Tout est ok,prêt pour l'envoi avec fetch");
   });
 
 // Fonction de validation de l'email
