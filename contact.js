@@ -1,17 +1,9 @@
-/*document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    console.log("Formulaire soumis.");
-    // Désactiver le bouton de soumission après le premier clic
-    document.querySelector('button[type="submit"]').disabled = true;
 
-    //  Ajoute un message pour informer l'utilisateur
-    alert("Formulaire soumis, veuillez patienter...");*/
 
     // interception de la soumission du formulaire
     document.getElementById("contact-form").addEventListener("submit", function (event) {
       event.preventDefault(); //Empeche le rechargement de la page
-      alerte("Formulaire intercepté, première étaoe réussue !");
+      alert ("Formulaire intercepté, première étaoe réussue !");
     
     // Récupérer les champs du formulaire
     const name = document.getElementById("name").value.trim();
@@ -42,9 +34,14 @@
     body: formData,
   })
     .then((response) => response.text())
+    // Traitement de la réponse du serveur après envoi avec fetch
     .then((data) => {
       console.log("Réponse du serveur :", data);
-      alert(data);
+       // Affiche le message de confirmation sous le formulaire(au lieu d'une alerte)
+  const responseElement = document.getElementById("response-message");
+  responseElement.textContent = data;
+  responseElement.style.color = "green";;
+  //reinitialise des champs du formulaire
       document.getElementById("contact-form").reset();
     })
     .catch((error) => {

@@ -768,4 +768,12 @@ table td a:hover {
   .habitats-page .habitat-container .habitat p {
     font-size: O.6rem !important;
   }
+
+  /* Message de confirmation affiché après soumission du formulaire de contact */
+.response-message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: green; /* Vert pour le succès */
+}
 }
