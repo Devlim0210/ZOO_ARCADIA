@@ -811,3 +811,12 @@ table td a:hover {
   color: #999;
   font-size: 0.8em;
 }
+
+
+
+.response-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}

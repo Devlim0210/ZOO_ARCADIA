@@ -47,6 +47,7 @@
           ></textarea>
 
           <button type="submit">Envoyer</button>
+          <p id="avis-message" class="response-message"></p>
         </form>
 
       </div>
@@ -55,5 +56,7 @@
     </div>
      <!-- Footer -->
      <?php include 'footer.php'; ?>
+     <!-- Lien vers le fichier JavaScript -->
+     <script src="avis.js"></script>
   </body>
 </html>
