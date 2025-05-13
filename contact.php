@@ -49,6 +49,8 @@
             ></textarea>
           </div>
           <button type="submit" id="submit-btn">Envoyer</button>
+          <!-- Zone d'affichage dynamique du message de confirmation (réponse de PHP via JavaScript) -->
+          <p id="response-message" class="response-message"></p>
         </form>
       </section>
 
