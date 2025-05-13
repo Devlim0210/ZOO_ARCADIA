@@ -777,3 +777,37 @@ table td a:hover {
   color: green; /* Vert pour le succès */
 }
 }
+
+/* STYLE DES AVIS */
+.avis-liste {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.avis-item {
+  background-color: #fff;
+  border-left: 5px solid #4CAF50;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.avis-item h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.avis-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.avis-item small {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+  font-size: 0.8em;
+}

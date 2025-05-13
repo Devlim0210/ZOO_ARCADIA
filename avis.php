@@ -48,8 +48,10 @@
 
           <button type="submit">Envoyer</button>
         </form>
+
       </div>
-     
+     <!-- Inclusion de l'affichage dynamique des avis -->
+<?php include 'get_avis.php'; ?>
     </div>
      <!-- Footer -->
      <?php include 'footer.php'; ?>
